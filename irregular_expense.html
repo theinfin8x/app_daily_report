@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="km">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#F0EEFF">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <title>ចំណាយមិនទៀងទាត់</title>
+  <link rel="icon" href="favicon.png" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Khmer:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <button class="back-btn" id="backBtn" aria-label="ត្រឡប់ក្រោយ"><i class="fa-solid fa-arrow-left"></i></button>
+  <div class="page page-sub active">
+    <div class="container">
+      <div class="sub-grid">
+        <div class="sub-card selected" tabindex="0" data-value="ceremony">
+          <span class="sub-card-check"><i class="fa-solid fa-check"></i></span>
+          <div class="sub-card-image">
+            <img loading="lazy" src="images/irregular_expense/irregular_ceremony.jpg" alt="">
+          </div>
+          <div class="sub-card-title">ពិធីបុណ្យ និងសាសនា</div>
+          <div class="sub-card-examples">មង្គលការ, បុណ្យសព, បុណ្យទានក្នុងភូមិ, ពិធីសាសនាផ្សេងៗ</div>
+        </div>
+        <div class="sub-card" tabindex="0" data-value="family_support">
+          <span class="sub-card-check"><i class="fa-solid fa-check"></i></span>
+          <div class="sub-card-image">
+            <img loading="lazy" src="images/irregular_expense/irregular_family.jpg" alt="">
+          </div>
+          <div class="sub-card-title">ការឧបត្ថម្ភគ្រួសារ</div>
+          <div class="sub-card-examples">ឧបត្ថម្ភថវិកាដល់ឪពុកម្តាយ ឬបងប្អូនក្នុងគ្រាដែលត្រូវការជំនួយ</div>
+        </div>
+        <div class="sub-card" tabindex="0" data-value="medical">
+          <span class="sub-card-check"><i class="fa-solid fa-check"></i></span>
+          <div class="sub-card-image">
+            <img loading="lazy" src="images/irregular_expense/irregular_medical.jpg" alt="">
+          </div>
+          <div class="sub-card-title">ថ្លៃព្យាបាលជំងឺបន្ទាន់</div>
+          <div class="sub-card-examples">ថ្លៃព្យាបាលជំងឺកូន ឬសមាជិកគ្រួសារដែលឈឺភ្លាមៗ</div>
+        </div>
+        <div class="sub-card" tabindex="0" data-value="vacation">
+          <span class="sub-card-check"><i class="fa-solid fa-check"></i></span>
+          <div class="sub-card-image">
+            <img loading="lazy" src="images/irregular_expense/irregular_vacation.jpg" alt="">
+          </div>
+          <div class="sub-card-title">ការធ្វើដំណើរកម្សាន្ត</div>
+          <div class="sub-card-examples">ចំណាយទៅដើរលេងក្រៅក្រុង ឬសម្រាកលំហែក្នុងឱកាសថ្ងៃឈប់សម្រាកធំៗ</div>
+        </div>
+      </div>
+    </div>
+    <footer class="sticky-footer">
+      <button class="btn-continue" id="btnContinue">
+        <i class="fa-solid fa-arrow-right btn-icon"></i>
+      </button>
+    </footer>
+  </div>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const cards = document.querySelectorAll('.sub-card');
+      const btn = document.getElementById('btnContinue');
+      let selected = 'ceremony';
+      cards.forEach(card => {
+        card.addEventListener('click', () => selectCard(card));
+        card.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); selectCard(card); } });
+      });
+      function selectCard(card) { cards.forEach(c => c.classList.remove('selected')); card.classList.add('selected'); card.focus(); selected = card.dataset.value; }
+      document.getElementById('backBtn').addEventListener('click', () => { window.location.href = 'expense.html'; });
+      btn.addEventListener('click', () => { localStorage.setItem('expenseBack', 'expense.html'); localStorage.setItem('selectedSubCategory', selected); window.location.href = 'payment.html'; });
+    });
+  </script>
+</body>
+</html>

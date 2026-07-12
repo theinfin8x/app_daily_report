@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="km">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#F0EEFF">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <title>ជ្រើសរើសវិធីបង់ប្រាក់</title>
+  <link rel="icon" href="favicon.png" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Khmer:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <button class="back-btn" id="backBtn" aria-label="ត្រឡប់ក្រោយ"><i class="fa-solid fa-arrow-left"></i></button>
+  <div class="main">
+  <h1>ជ្រើសរើសវិធីបង់ប្រាក់</h1>
+  <p class="subtitle">ជ្រើសរើសវិធីបង់ប្រាក់ដែលអ្នកចង់ប្រើ</p>
+
+  <div class="content">
+    <div class="payment-grid">
+      <div class="payment-card" tabindex="0" data-value="cash">
+        <div class="payment-card-image">
+          <img loading="lazy" src="cash.png" alt="សាច់ប្រាក់">
+        </div>
+        <div class="payment-card-info">
+          <div class="payment-card-title">សាច់ប្រាក់</div>
+          <div class="payment-card-desc">បង់ប្រាក់ដោយផ្ទាល់</div>
+        </div>
+        <div class="payment-card-check"><i class="fa-solid fa-check"></i></div>
+      </div>
+
+      <div class="payment-card" tabindex="0" data-value="aba">
+        <div class="payment-card-image">
+          <img loading="lazy" src="aba.jpeg" alt="ABA Bank">
+        </div>
+        <div class="payment-card-info">
+          <div class="payment-card-title">ABA Bank</div>
+          <div class="payment-card-desc">ផ្ទេរប្រាក់តាម ABA</div>
+        </div>
+        <div class="payment-card-check"><i class="fa-solid fa-check"></i></div>
+      </div>
+
+      <div class="payment-card" tabindex="0" data-value="acleda">
+        <div class="payment-card-image">
+          <img loading="lazy" src="acleda.png" alt="ACLEDA Bank">
+        </div>
+        <div class="payment-card-info">
+          <div class="payment-card-title">ACLEDA Bank</div>
+          <div class="payment-card-desc">ផ្ទេរប្រាក់តាម ACLEDA</div>
+        </div>
+        <div class="payment-card-check"><i class="fa-solid fa-check"></i></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <!-- Sticky Footer -->
+  <footer class="sticky-footer">
+    <button class="btn-continue" id="btnContinue" disabled>
+      <i class="fa-solid fa-arrow-right btn-icon"></i>
+    </button>
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const cards = document.querySelectorAll('.payment-card');
+      const btn = document.getElementById('btnContinue');
+      let selected = null;
+
+      cards.forEach(card => {
+        card.addEventListener('click', () => selectCard(card));
+        card.addEventListener('keydown', e => {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            selectCard(card);
+          }
+        });
+      });
+
+      function selectCard(card) {
+        cards.forEach(c => c.classList.remove('selected'));
+        card.classList.add('selected');
+        card.focus();
+        selected = card.dataset.value;
+        btn.disabled = false;
+      }
+
+      document.getElementById('backBtn').addEventListener('click', () => {
+        const back = localStorage.getItem('expenseBack') || 'expense.html';
+        window.location.href = back;
+      });
+
+      btn.addEventListener('click', () => {
+        if (selected) {
+          localStorage.setItem('selectedPayment', selected);
+          window.location.href = 'currency.html';
+        }
+      });
+    });
+  </script>
+</body>
+</html>

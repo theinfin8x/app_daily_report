@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="km">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#F0EEFF">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <title>ជ្រើសរើសរូបិយប័ណ្ណ</title>
+  <link rel="icon" href="favicon.png" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Khmer:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <button class="back-btn" id="backBtn" aria-label="ត្រឡប់ក្រោយ"><i class="fa-solid fa-arrow-left"></i></button>
+  <div class="main">
+  <h1>ជ្រើសរើសរូបិយប័ណ្ណ</h1>
+  <p class="subtitle">ជ្រើសរើសរូបិយប័ណ្ណដែលអ្នកប្រើប្រាស់</p>
+
+  <div class="content">
+    <div class="currency-grid">
+      <div class="currency-card" tabindex="0" data-currency="USD">
+        <div class="currency-card-image">
+          <img loading="lazy" src="images/flag-us.png" alt="USD">
+        </div>
+        <div class="currency-card-info">
+          <div class="currency-card-symbol">USD</div>
+          <div class="currency-card-name">ដុល្លារអាមេរិក</div>
+        </div>
+        <div class="currency-card-check"><i class="fa-solid fa-check"></i></div>
+      </div>
+
+      <div class="currency-card" tabindex="0" data-currency="KHR">
+        <div class="currency-card-image">
+          <img loading="lazy" src="images/flag-kh.png" alt="KHR">
+        </div>
+        <div class="currency-card-info">
+          <div class="currency-card-symbol">KHR</div>
+          <div class="currency-card-name">រៀលកម្ពុជា</div>
+        </div>
+        <div class="currency-card-check"><i class="fa-solid fa-check"></i></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <!-- Sticky Continue -->
+  <footer class="sticky-footer">
+    <button class="btn-continue" id="btnContinue" disabled>
+      <i class="fa-solid fa-arrow-right btn-icon"></i>
+    </button>
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const cards = document.querySelectorAll('.currency-card');
+      const btn = document.getElementById('btnContinue');
+      let selected = null;
+
+      cards.forEach(card => {
+        card.addEventListener('click', () => selectCard(card));
+        card.addEventListener('keydown', e => {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            selectCard(card);
+          }
+        });
+      });
+
+      function selectCard(card) {
+        cards.forEach(c => c.classList.remove('selected'));
+        card.classList.add('selected');
+        card.focus();
+        selected = card.dataset.currency;
+        btn.disabled = false;
+      }
+
+      document.getElementById('backBtn').addEventListener('click', () => {
+        window.location.href = 'payment.html';
+      });
+
+      btn.addEventListener('click', () => {
+        if (selected) {
+          if (typeof localStorage !== 'undefined') {
+            localStorage.setItem('selectedCurrency', JSON.stringify({ currency: selected }));
+          }
+          window.location.href = 'amount.html';
+        }
+      });
+    });
+  </script>
+</body>
+</html>

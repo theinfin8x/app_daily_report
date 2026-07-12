@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="km">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#F0EEFF">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <title>ម៉ែមាលាចំណូលចំណាយ</title>
+  <link rel="icon" href="favicon.png" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Khmer:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="pendingBanner" class="pending-banner" onclick="retryPending()">
+    <i class="fa-solid fa-cloud-upload-alt"></i>
+    <span id="pendingText">កំពុងរង់ចាំដាក់ស្នើ <span id="pendingCount">0</span> ប្រតិបត្តិការ — ចុចដើម្បីដាក់ស្នើ</span>
+  </div>
+  <!-- Page 1: Selection -->
+  <div class="page page-selection active">
+    <div class="container">
+      <section class="selection" role="radiogroup" aria-label="ជ្រើសរើសប្រភេទចំណូល">
+        <div class="card" tabindex="0" role="radio" aria-checked="false" data-value="income">
+          <span class="card-check-badge" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+          <div class="card-image">
+            <img src="images/ចំណូល.jpg" alt="ចំណូល" loading="lazy">
+          </div>
+          <p class="card-label">ចំណូល</p>
+        </div>
+
+        <div class="card" tabindex="0" role="radio" aria-checked="false" data-value="expense">
+          <span class="card-check-badge" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+          <div class="card-image">
+            <img src="images/ចំណាយ.jpg" alt="ចំណាយ" loading="lazy">
+          </div>
+          <p class="card-label">ចំណាយ</p>
+        </div>
+      </section>
+    </div>
+
+    <footer class="sticky-footer">
+      <button class="btn-continue" id="btnContinue" disabled aria-label="បន្ត">
+        <i class="fa-solid fa-arrow-right btn-icon"></i>
+      </button>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

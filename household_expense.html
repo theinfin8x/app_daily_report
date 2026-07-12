@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="km">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#F0EEFF">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <title>ចំណាយក្នុងផ្ទះ</title>
+  <link rel="icon" href="favicon.png" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Khmer:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <button class="back-btn" id="backBtn" aria-label="ត្រឡប់ក្រោយ"><i class="fa-solid fa-arrow-left"></i></button>
+  <div class="page page-sub active">
+    <div class="container">
+      <div class="sub-grid">
+        <div class="sub-card selected" tabindex="0" data-value="water_electric">
+          <span class="sub-card-check"><i class="fa-solid fa-check"></i></span>
+          <div class="sub-card-image">
+            <img loading="lazy" src="images/household_expense/water_electric.jpg" alt="">
+          </div>
+          <div class="sub-card-title">ទឹក និងភ្លើង</div>
+          <div class="sub-card-examples">ថ្លៃទឹក, ថ្លៃភ្លើងប្រើប្រាស់ក្នុងផ្ទះ</div>
+        </div>
+
+        <div class="sub-card" tabindex="0" data-value="rice">
+          <span class="sub-card-check"><i class="fa-solid fa-check"></i></span>
+          <div class="sub-card-image">
+            <img loading="lazy" src="images/household_expense/rice.jpg" alt="">
+          </div>
+          <div class="sub-card-title">អង្ករ</div>
+          <div class="sub-card-examples">អង្ករស, អង្ករដំណើប, មី, នំប៉័ង</div>
+        </div>
+
+        <div class="sub-card" tabindex="0" data-value="fruit">
+          <span class="sub-card-check"><i class="fa-solid fa-check"></i></span>
+          <div class="sub-card-image">
+            <img loading="lazy" src="images/household_expense/fruit.jpg" alt="">
+          </div>
+          <div class="sub-card-title">ផ្លែឈើ</div>
+          <div class="sub-card-examples">ផ្លែឈើតាមរដូវ, ផ្លែឈើស្រស់</div>
+        </div>
+
+        <div class="sub-card" tabindex="0" data-value="eggs">
+          <span class="sub-card-check"><i class="fa-solid fa-check"></i></span>
+          <div class="sub-card-image">
+            <img loading="lazy" src="images/household_expense/eggs.jpg" alt="">
+          </div>
+          <div class="sub-card-title">ស៊ុត</div>
+          <div class="sub-card-examples">ស៊ុតមាន់, ស៊ុតទា</div>
+        </div>
+
+        <div class="sub-card" tabindex="0" data-value="spices">
+          <span class="sub-card-check"><i class="fa-solid fa-check"></i></span>
+          <div class="sub-card-image">
+            <img loading="lazy" src="images/household_expense/spices.jpg" alt="">
+          </div>
+          <div class="sub-card-title">គ្រឿងទេស</div>
+          <div class="sub-card-examples">ម្ទេស, ខ្ទឹម, ស្ករ, អំបិល, រមៀត</div>
+        </div>
+
+        <div class="sub-card" tabindex="0" data-value="fish_sauce">
+          <span class="sub-card-check"><i class="fa-solid fa-check"></i></span>
+          <div class="sub-card-image">
+            <img loading="lazy" src="images/household_expense/fish_sauce.jpg" alt="">
+          </div>
+          <div class="sub-card-title">ទឹកត្រី</div>
+          <div class="sub-card-examples">ទឹកត្រីធម្មតា</div>
+        </div>
+
+        <div class="sub-card" tabindex="0" data-value="soy_sauce">
+          <span class="sub-card-check"><i class="fa-solid fa-check"></i></span>
+          <div class="sub-card-image">
+            <img loading="lazy" src="images/household_expense/soy_sauce.jpg" alt="">
+          </div>
+          <div class="sub-card-title">ទឹកស៊ីអ៊ីវ</div>
+          <div class="sub-card-examples">ទឹកស៊ីអ៊ីវខ្មៅ</div>
+        </div>
+
+        <div class="sub-card" tabindex="0" data-value="cooking_oil">
+          <span class="sub-card-check"><i class="fa-solid fa-check"></i></span>
+          <div class="sub-card-image">
+            <img loading="lazy" src="images/household_expense/cooking_oil.jpg" alt="">
+          </div>
+          <div class="sub-card-title">ប្រេងឆា</div>
+          <div class="sub-card-examples">ប្រេងសណ្ដែក, ប្រេងដូង, ប្រេងអូលីវ</div>
+        </div>
+
+        <div class="sub-card" tabindex="0" data-value="beverages">
+          <span class="sub-card-check"><i class="fa-solid fa-check"></i></span>
+          <div class="sub-card-image">
+            <img loading="lazy" src="images/household_expense/beverages.jpg" alt="">
+          </div>
+          <div class="sub-card-title">ភេសជ្ជៈ</div>
+          <div class="sub-card-examples">ទឹកបរិសុទ្ធ, ទឹកក្រូច, កាហ្វេ, តែ</div>
+        </div>
+
+        <div class="sub-card" tabindex="0" data-value="vegetables">
+          <span class="sub-card-check"><i class="fa-solid fa-check"></i></span>
+          <div class="sub-card-image">
+            <img loading="lazy" src="images/household_expense/vegetables.jpg" alt="">
+          </div>
+          <div class="sub-card-title">បន្លែ</div>
+          <div class="sub-card-examples">ស្ពៃ, ត្រប់, ខាត់ណា, ល្ពៅ, ស្លឹកគ្រៃ</div>
+        </div>
+
+        <div class="sub-card" tabindex="0" data-value="seafood">
+          <span class="sub-card-check"><i class="fa-solid fa-check"></i></span>
+          <div class="sub-card-image">
+            <img loading="lazy" src="images/household_expense/seafood.jpg" alt="">
+          </div>
+          <div class="sub-card-title">គ្រឿងសមុទ្រ</div>
+          <div class="sub-card-examples">ក្តាម, បង្គា, ខ្យង, ត្រីសមុទ្រ</div>
+        </div>
+
+        <div class="sub-card" tabindex="0" data-value="fish">
+          <span class="sub-card-check"><i class="fa-solid fa-check"></i></span>
+          <div class="sub-card-image">
+            <img loading="lazy" src="images/household_expense/fish.jpg" alt="">
+          </div>
+          <div class="sub-card-title">ត្រី</div>
+          <div class="sub-card-examples">ត្រីស្រស់, ត្រីងៀត, ត្រីក្រៀម</div>
+        </div>
+
+        <div class="sub-card" tabindex="0" data-value="beef">
+          <span class="sub-card-check"><i class="fa-solid fa-check"></i></span>
+          <div class="sub-card-image">
+            <img loading="lazy" src="images/household_expense/beef.jpg" alt="">
+          </div>
+          <div class="sub-card-title">សាច់គោ</div>
+          <div class="sub-card-examples">សាច់គោស្រស់</div>
+        </div>
+
+        <div class="sub-card" tabindex="0" data-value="chicken">
+          <span class="sub-card-check"><i class="fa-solid fa-check"></i></span>
+          <div class="sub-card-image">
+            <img loading="lazy" src="images/household_expense/chicken.jpg" alt="">
+          </div>
+          <div class="sub-card-title">សាច់មាន់</div>
+          <div class="sub-card-examples">សាច់មាន់ស្រស់</div>
+        </div>
+
+        <div class="sub-card" tabindex="0" data-value="pork">
+          <span class="sub-card-check"><i class="fa-solid fa-check"></i></span>
+          <div class="sub-card-image">
+            <img loading="lazy" src="images/household_expense/pork.jpg" alt="">
+          </div>
+          <div class="sub-card-title">សាច់ជ្រូក</div>
+          <div class="sub-card-examples">សាច់ជ្រូកស្រស់, ឆ្អឹងជ្រូក</div>
+        </div>
+
+        <div class="sub-card" tabindex="0" data-value="kitchen_tools">
+          <span class="sub-card-check"><i class="fa-solid fa-check"></i></span>
+          <div class="sub-card-image">
+            <img loading="lazy" src="images/household_expense/kitchen_tools.jpg" alt="">
+          </div>
+          <div class="sub-card-title">សម្ភារៈផ្ទះបាយ</div>
+          <div class="sub-card-examples">ឆ្នាំង, ខ្ទះ, ថាស, កូនកាំបិត, ធុងទឹក, ប្រអប់ដាក់ម្ហូប</div>
+        </div>
+
+        <div class="sub-card" tabindex="0" data-value="cleaning">
+          <span class="sub-card-check"><i class="fa-solid fa-check"></i></span>
+          <div class="sub-card-image">
+            <img loading="lazy" src="images/household_expense/cleaning.jpg" alt="">
+          </div>
+          <div class="sub-card-title">សម្ភារៈសម្អាតផ្ទះ</div>
+          <div class="sub-card-examples">ទឹកជូតការ៉ូ, អំបោស, ក្រណាត់ជូតផ្ទះ, ទឹកលាងកញ្ចក់</div>
+        </div>
+
+        <div class="sub-card" tabindex="0" data-value="gas_cooking">
+          <span class="sub-card-check"><i class="fa-solid fa-check"></i></span>
+          <div class="sub-card-image">
+            <img loading="lazy" src="images/household_expense/gas_cooking.jpg" alt="">
+          </div>
+          <div class="sub-card-title">ហ្គាស និងឧបករណ៍ចម្អិន</div>
+          <div class="sub-card-examples">ថ្លៃហ្គាស, ថ្លៃដឹកហ្គាស, ឧបករណ៍ដុត ឬដាំបាយ</div>
+        </div>
+
+        <div class="sub-card" tabindex="0" data-value="laundry">
+          <span class="sub-card-check"><i class="fa-solid fa-check"></i></span>
+          <div class="sub-card-image">
+            <img loading="lazy" src="images/household_expense/laundry.jpg" alt="">
+          </div>
+          <div class="sub-card-title">សម្ភារៈបោកគក់</div>
+          <div class="sub-card-examples">សាប៊ូបោកខោអាវ, ទឹកបន្ទន់សម្លៀកបំពាក់, ឈុតម៉ាស៊ីនបោក</div>
+        </div>
+
+        <div class="sub-card" tabindex="0" data-value="appliance_repair">
+          <span class="sub-card-check"><i class="fa-solid fa-check"></i></span>
+          <div class="sub-card-image">
+            <img loading="lazy" src="images/household_expense/appliance_repair.jpg" alt="">
+          </div>
+          <div class="sub-card-title">ថែទាំឧបករណ៍ផ្ទះ</div>
+          <div class="sub-card-examples">ជួសជុលម៉ាស៊ីនត្រជាក់, កង្ហារ, ឬជួសជុលរបស់របរក្នុងផ្ទះ</div>
+        </div>
+
+        <div class="sub-card" tabindex="0" data-value="home_repair">
+          <span class="sub-card-check"><i class="fa-solid fa-check"></i></span>
+          <div class="sub-card-image">
+            <img loading="lazy" src="images/household_expense/home_repair.jpg" alt="">
+          </div>
+          <div class="sub-card-title">ជួសជុលផ្ទះសម្បែង</div>
+          <div class="sub-card-examples">ថ្លៃជាងជួសជុលដំបូល, ជញ្ជាំង, ឬបំពង់ទឹកដែលបែកធ្លាយ</div>
+        </div>
+
+        <div class="sub-card" tabindex="0" data-value="toiletries">
+          <span class="sub-card-check"><i class="fa-solid fa-check"></i></span>
+          <div class="sub-card-image">
+            <img loading="lazy" src="images/household_expense/toiletries.jpg" alt="">
+          </div>
+          <div class="sub-card-title">សម្ភារៈប្រើប្រាស់ទូទៅ</div>
+          <div class="sub-card-examples">ក្រដាសអនាម័យ, សាប៊ូដុសខ្លួន, ថ្នាំដុសធ្មេញ, កន្សែង</div>
+        </div>
+
+        <div class="sub-card" tabindex="0" data-value="internet_phone">
+          <span class="sub-card-check"><i class="fa-solid fa-check"></i></span>
+          <div class="sub-card-image">
+            <img loading="lazy" src="images/household_expense/internet_phone.jpg" alt="">
+          </div>
+          <div class="sub-card-title">ថ្លៃអ៊ីនធឺណិត និងទូរស័ព្ទ</div>
+          <div class="sub-card-examples">ថ្លៃបង់គម្រោងអ៊ីនធឺណិតសម្រាប់ប្រើក្នុងផ្ទះ</div>
+        </div>
+
+        <div class="sub-card" tabindex="0" data-value="community_service">
+          <span class="sub-card-check"><i class="fa-solid fa-check"></i></span>
+          <div class="sub-card-image">
+            <img loading="lazy" src="images/household_expense/community_service.jpg" alt="">
+          </div>
+          <div class="sub-card-title">សេវាសង្គមក្នុងផ្ទះ</div>
+          <div class="sub-card-examples">ថ្លៃប្រមូលសំរាម និងសេវាសន្តិសុខ</div>
+        </div>
+
+        <div class="sub-card" tabindex="0" data-value="decor">
+          <span class="sub-card-check"><i class="fa-solid fa-check"></i></span>
+          <div class="sub-card-image">
+            <img loading="lazy" src="images/household_expense/decor.jpg" alt="">
+          </div>
+          <div class="sub-card-title">របស់របរតុបតែងផ្ទះ</div>
+          <div class="sub-card-examples">វាំងនន, ភួយ, ខ្នើយ, ឬរូបភាពដាក់តាំងលម្អ</div>
+        </div>
+      </div>
+    </div>
+
+    <footer class="sticky-footer">
+      <button class="btn-continue" id="btnContinue">
+        <i class="fa-solid fa-arrow-right btn-icon"></i>
+      </button>
+    </footer>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const cards = document.querySelectorAll('.sub-card');
+      const btn = document.getElementById('btnContinue');
+      let selected = 'water_electric';
+
+      cards.forEach(card => {
+        card.addEventListener('click', () => selectCard(card));
+        card.addEventListener('keydown', e => {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            selectCard(card);
+          }
+        });
+      });
+
+      function selectCard(card) {
+        cards.forEach(c => c.classList.remove('selected'));
+        card.classList.add('selected');
+        card.focus();
+        selected = card.dataset.value;
+      }
+
+      document.getElementById('backBtn').addEventListener('click', () => {
+        window.location.href = 'expense.html';
+      });
+
+      btn.addEventListener('click', () => {
+        localStorage.setItem('expenseBack', 'expense.html');
+        localStorage.setItem('selectedSubCategory', selected);
+        window.location.href = 'payment.html';
+      });
+    });
+  </script>
+</body>
+</html>
