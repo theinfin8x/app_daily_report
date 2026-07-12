@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="km">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#F0EEFF">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <title>ការធ្វើដំណើរ និងយានយន្ត</title>
+  <link rel="icon" href="favicon.png" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Khmer:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <button class="back-btn" id="backBtn" aria-label="ត្រឡប់ក្រោយ"><i class="fa-solid fa-arrow-left"></i></button>
+  <div class="page page-sub active">
+    <div class="container">
+      <div class="sub-grid">
+        <div class="sub-card selected" tabindex="0" data-value="fuel">
+          <span class="sub-card-check"><i class="fa-solid fa-check"></i></span>
+          <div class="sub-card-image">
+            <img loading="lazy" src="images/travel_expense/travel_fuel.png" alt="">
+          </div>
+          <div class="sub-card-title">ប្រេងសាំង</div>
+          <div class="sub-card-examples">ថ្លៃសាំងសម្រាប់ម៉ូតូ ឬឡានគ្រួសារ</div>
+        </div>
+        <div class="sub-card" tabindex="0" data-value="maintenance">
+          <span class="sub-card-check"><i class="fa-solid fa-check"></i></span>
+          <div class="sub-card-image">
+            <img loading="lazy" src="images/travel_expense/travel_maintenance.png" alt="">
+          </div>
+          <div class="sub-card-title">ការថែទាំយានយន្ត</div>
+          <div class="sub-card-examples">ប្តូរប្រេងម៉ាស៊ីន, ប្តូរតម្រងសាំង, ពិនិត្យហ្វ្រាំង និងសម្ពាធកង់</div>
+        </div>
+        <div class="sub-card" tabindex="0" data-value="car_wash">
+          <span class="sub-card-check"><i class="fa-solid fa-check"></i></span>
+          <div class="sub-card-image">
+            <img loading="lazy" src="images/travel_expense/travel_wash.png" alt="">
+          </div>
+          <div class="sub-card-title">ការលាងសម្អាតយានយន្ត</div>
+          <div class="sub-card-examples">លាងឡាន ឬម៉ូតូ ដើម្បីរក្សាគុណភាពថ្នាំ</div>
+        </div>
+        <div class="sub-card" tabindex="0" data-value="spare_parts">
+          <span class="sub-card-check"><i class="fa-solid fa-check"></i></span>
+          <div class="sub-card-image">
+            <img loading="lazy" src="images/travel_expense/travel_parts.png" alt="">
+          </div>
+          <div class="sub-card-title">គ្រឿងបន្លាស់ និងជួសជុល</div>
+          <div class="sub-card-examples">ប្តូរកង់, ជួសជុលភ្លើង, ជួសជុលម៉ាស៊ីន</div>
+        </div>
+        <div class="sub-card" tabindex="0" data-value="tax_insurance">
+          <span class="sub-card-check"><i class="fa-solid fa-check"></i></span>
+          <div class="sub-card-image">
+            <img loading="lazy" src="images/travel_expense/travel_tax.png" alt="">
+          </div>
+          <div class="sub-card-title">ពន្ធ និងធានារ៉ាប់រង</div>
+          <div class="sub-card-examples">ពន្ធផ្លូវប្រចាំឆ្នាំ, បន្តស្លាកលេខ, ធានារ៉ាប់រងយានយន្ត</div>
+        </div>
+        <div class="sub-card" tabindex="0" data-value="ride_hailing">
+          <span class="sub-card-check"><i class="fa-solid fa-check"></i></span>
+          <div class="sub-card-image">
+            <img loading="lazy" src="images/travel_expense/travel_ride.png" alt="">
+          </div>
+          <div class="sub-card-title">សេវាដឹកជញ្ជូនសាធារណៈ</div>
+          <div class="sub-card-examples">Grab, PassApp, ឬតាក់ស៊ី ក្នុងករណីមិនប្រើយានយន្តផ្ទាល់ខ្លួន</div>
+        </div>
+        <div class="sub-card" tabindex="0" data-value="parking_delivery">
+          <span class="sub-card-check"><i class="fa-solid fa-check"></i></span>
+          <div class="sub-card-image">
+            <img loading="lazy" src="images/travel_expense/travel_parking.png" alt="">
+          </div>
+          <div class="sub-card-title">ថ្លៃចំណត និងផ្ញើយានយន្ត</div>
+          <div class="sub-card-examples">ថ្លៃផ្ញើម៉ូតូ/ឡានតាមផ្សារទំនើប ឬកន្លែងផ្សេងៗ</div>
+        </div>
+        <div class="sub-card" tabindex="0" data-value="traffic_fine">
+          <span class="sub-card-check"><i class="fa-solid fa-check"></i></span>
+          <div class="sub-card-image">
+            <img loading="lazy" src="images/travel_expense/travel_fine.png" alt="">
+          </div>
+          <div class="sub-card-title">ថ្លៃផាកពិន័យចរាចរណ៍</div>
+          <div class="sub-card-examples">ថ្លៃពិន័យល្មើសច្បាប់ចរាចរណ៍</div>
+        </div>
+      </div>
+    </div>
+    <footer class="sticky-footer">
+      <button class="btn-continue" id="btnContinue">
+        <i class="fa-solid fa-arrow-right btn-icon"></i>
+      </button>
+    </footer>
+  </div>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const cards = document.querySelectorAll('.sub-card');
+      const btn = document.getElementById('btnContinue');
+      let selected = 'fuel';
+      cards.forEach(card => {
+        card.addEventListener('click', () => selectCard(card));
+        card.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); selectCard(card); } });
+      });
+      function selectCard(card) { cards.forEach(c => c.classList.remove('selected')); card.classList.add('selected'); card.focus(); selected = card.dataset.value; }
+      document.getElementById('backBtn').addEventListener('click', () => { window.location.href = 'expense.html'; });
+      btn.addEventListener('click', () => { localStorage.setItem('expenseBack', 'expense.html'); localStorage.setItem('selectedSubCategory', selected); window.location.href = 'payment.html'; });
+    });
+  </script>
+</body>
+</html>

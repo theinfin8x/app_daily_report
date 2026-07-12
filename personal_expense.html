@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="km">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#F0EEFF">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <title>ចំណាយផ្ទាល់ខ្លួន</title>
+  <link rel="icon" href="favicon.png" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Khmer:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <button class="back-btn" id="backBtn" aria-label="ត្រឡប់ក្រោយ"><i class="fa-solid fa-arrow-left"></i></button>
+  <div class="page page-sub active">
+    <div class="container">
+      <div class="sub-grid">
+        <div class="sub-card selected" tabindex="0" data-value="skincare">
+          <span class="sub-card-check"><i class="fa-solid fa-check"></i></span>
+          <div class="sub-card-image">
+            <img loading="lazy" src="images/personal_expense/personal_skincare.png" alt="">
+          </div>
+          <div class="sub-card-title">ផលិតផលថែរក្សាស្បែក</div>
+          <div class="sub-card-examples">Face wash, Moisturizer, Sunscreen, គ្រឿងសម្អាង, ម៉ាសបិទមុខ</div>
+        </div>
+
+        <div class="sub-card" tabindex="0" data-value="hygiene">
+          <span class="sub-card-check"><i class="fa-solid fa-check"></i></span>
+          <div class="sub-card-image">
+            <img loading="lazy" src="images/personal_expense/personal_hygiene.png" alt="">
+          </div>
+          <div class="sub-card-title">ផលិតផលអនាម័យ</div>
+          <div class="sub-card-examples">កន្សែងអនាម័យ, សាប៊ូដុសខ្លួន, សាប៊ូកក់សក់, កម្ចាត់រោម, ទឹកអប់, ឡេលាបខ្លួន</div>
+        </div>
+
+        <div class="sub-card" tabindex="0" data-value="beauty">
+          <span class="sub-card-check"><i class="fa-solid fa-check"></i></span>
+          <div class="sub-card-image">
+            <img loading="lazy" src="images/personal_expense/personal_beauty.png" alt="">
+          </div>
+          <div class="sub-card-title">ការថែរក្សាសម្រស់</div>
+          <div class="sub-card-examples">កាត់សក់, ជ្រលក់សក់, ស្ប៉ា (Spa), Manicure/Pedicure, ហាងថែរក្សាសម្រស់</div>
+        </div>
+
+        <div class="sub-card" tabindex="0" data-value="clothing">
+          <span class="sub-card-check"><i class="fa-solid fa-check"></i></span>
+          <div class="sub-card-image">
+            <img loading="lazy" src="images/personal_expense/personal_clothing.png" alt="">
+          </div>
+          <div class="sub-card-title">សម្លៀកបំពាក់ និងគ្រឿងអលង្ការ</div>
+          <div class="sub-card-examples">ខោអាវប្រចាំថ្ងៃ, ឈុតដើរលេង, Underwear, កាបូប, ស្បែកជើង, គ្រឿងអលង្ការ</div>
+        </div>
+
+        <div class="sub-card" tabindex="0" data-value="health">
+          <span class="sub-card-check"><i class="fa-solid fa-check"></i></span>
+          <div class="sub-card-image">
+            <img loading="lazy" src="images/personal_expense/personal_health.png" alt="">
+          </div>
+          <div class="sub-card-title">សុខភាពផ្ទាល់ខ្លួន</div>
+          <div class="sub-card-examples">ពិនិត្យសុខភាពស្ត្រី, វីតាមីន/អាហារបំប៉ន, ថ្នាំលេបប្រចាំថ្ងៃ, ពិនិត្យធ្មេញ</div>
+        </div>
+
+        <div class="sub-card" tabindex="0" data-value="development">
+          <span class="sub-card-check"><i class="fa-solid fa-check"></i></span>
+          <div class="sub-card-image">
+            <img loading="lazy" src="images/personal_expense/personal_development.png" alt="">
+          </div>
+          <div class="sub-card-title">ការអភិវឌ្ឍន៍ខ្លួនឯង</div>
+          <div class="sub-card-examples">ការជាវសៀវភៅអាន, ថ្លៃសិក្សាជំនាញបន្ថែម, Online courses</div>
+        </div>
+
+        <div class="sub-card" tabindex="0" data-value="entertainment">
+          <span class="sub-card-check"><i class="fa-solid fa-check"></i></span>
+          <div class="sub-card-image">
+            <img loading="lazy" src="images/personal_expense/personal_entertainment.png" alt="">
+          </div>
+          <div class="sub-card-title">ការកម្សាន្ត និងសង្គម</div>
+          <div class="sub-card-examples">ថ្លៃកាហ្វេជួបមិត្តភក្តិ, ដើរលេងកម្សាន្ត, សំបុត្រកុន, Netflix/Spotify</div>
+        </div>
+
+        <div class="sub-card" tabindex="0" data-value="transport">
+          <span class="sub-card-check"><i class="fa-solid fa-check"></i></span>
+          <div class="sub-card-image">
+            <img loading="lazy" src="images/personal_expense/personal_transport.png" alt="">
+          </div>
+          <div class="sub-card-title">ការដឹកជញ្ជូនផ្ទាល់ខ្លួន</div>
+          <div class="sub-card-examples">ថ្លៃសាំង, ថ្លៃសេវា Grab/តាក់ស៊ី, ថ្លៃផ្ញើម៉ូតូ/ឡានទៅផ្សារ ឬដើរលេង</div>
+        </div>
+
+        <div class="sub-card" tabindex="0" data-value="accessories">
+          <span class="sub-card-check"><i class="fa-solid fa-check"></i></span>
+          <div class="sub-card-image">
+            <img loading="lazy" src="images/personal_expense/personal_accessories.png" alt="">
+          </div>
+          <div class="sub-card-title">គ្រឿងប្រើប្រាស់ផ្ទាល់ខ្លួន</div>
+          <div class="sub-card-examples">វ៉ែនតា, នាឡិកា, ស្រោមទូរស័ព្ទ, កាសស្តាប់, ឬសម្ភារៈប្រើប្រាស់តែម្នាក់ឯង</div>
+        </div>
+      </div>
+    </div>
+
+    <footer class="sticky-footer">
+      <button class="btn-continue" id="btnContinue">
+        <i class="fa-solid fa-arrow-right btn-icon"></i>
+      </button>
+    </footer>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const cards = document.querySelectorAll('.sub-card');
+      const btn = document.getElementById('btnContinue');
+      let selected = 'skincare';
+
+      cards.forEach(card => {
+        card.addEventListener('click', () => selectCard(card));
+        card.addEventListener('keydown', e => {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            selectCard(card);
+          }
+        });
+      });
+
+      function selectCard(card) {
+        cards.forEach(c => c.classList.remove('selected'));
+        card.classList.add('selected');
+        card.focus();
+        selected = card.dataset.value;
+      }
+
+      document.getElementById('backBtn').addEventListener('click', () => {
+        window.location.href = 'expense.html';
+      });
+
+      btn.addEventListener('click', () => {
+        localStorage.setItem('expenseBack', 'expense.html');
+        localStorage.setItem('selectedSubCategory', selected);
+        window.location.href = 'payment.html';
+      });
+    });
+  </script>
+</body>
+</html>

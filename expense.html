@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="km">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#F0EEFF">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <title>ជ្រើសរើសចំណាយ</title>
+  <link rel="icon" href="favicon.png" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Khmer:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .page-expense .container {
+      padding-bottom: calc(var(--sticky-height) + env(safe-area-inset-bottom, 0px) + var(--spacing-lg));
+      flex: 1;
+      overflow-y: auto;
+    }
+
+    .expense-grid {
+      display: flex;
+      flex-direction: column;
+      gap: var(--spacing-md);
+    }
+
+    .expense-card {
+      background: var(--color-white);
+      border: 3px solid var(--color-border);
+      border-radius: var(--radius-card);
+      padding: var(--spacing-sm);
+      cursor: pointer;
+      transition: border-color var(--transition-fast), box-shadow var(--transition-fast), transform var(--transition-fast);
+      box-shadow: var(--shadow-card);
+      position: relative;
+      outline: none;
+      -webkit-tap-highlight-color: transparent;
+      user-select: none;
+    }
+
+    .expense-card:hover {
+      box-shadow: var(--shadow-card-hover);
+      transform: translateY(-2px);
+    }
+
+    .expense-card:active {
+      transform: translateY(0) scale(0.98);
+      box-shadow: var(--shadow-card);
+      transition-duration: 0.08s;
+    }
+
+    .expense-card:focus-visible {
+      border-color: var(--color-primary);
+      box-shadow: 0 0 0 3px var(--color-primary-light);
+    }
+
+    .expense-card.selected {
+      border-color: var(--color-primary);
+      box-shadow: var(--shadow-card-selected);
+      transform: translateY(-2px);
+    }
+
+    .expense-card-image {
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      border-radius: 12px;
+      margin-bottom: var(--spacing-xs);
+    }
+
+    .expense-card-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      display: block;
+    }
+
+    .expense-card-image svg {
+      width: 64px;
+      height: 64px;
+    }
+
+    .expense-card-label {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--color-text);
+      line-height: 1.5;
+      padding: var(--spacing-xs) 0;
+      text-align: center;
+    }
+
+    .expense-card-check {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: var(--color-primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--color-white);
+      opacity: 0;
+      transform: scale(0);
+      transition: opacity var(--transition-fast), transform var(--transition-fast);
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    .expense-card.selected .expense-card-check {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    .expense-card-check i {
+      font-size: 14px;
+      color: var(--color-white);
+    }
+
+    @media (min-width: 640px) {
+      .expense-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: var(--spacing-lg);
+      }
+    }
+
+    @media (max-width: 360px) {
+      .expense-card-image {
+        border-radius: 8px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <button class="back-btn" id="backBtn" aria-label="ត្រឡប់ក្រោយ"><i class="fa-solid fa-arrow-left"></i></button>
+  <div class="page page-expense active">
+    <div class="container">
+      <div class="expense-grid">
+        <div class="expense-card selected" tabindex="0" data-value="household">
+          <span class="expense-card-check"><i class="fa-solid fa-check"></i></span>
+          <div class="expense-card-image">
+            <img src="images/sub/household.png" alt="ចំណាយក្នុងផ្ទះ" loading="lazy">
+          </div>
+          <p class="expense-card-label">ចំណាយក្នុងផ្ទះ</p>
+        </div>
+
+        <div class="expense-card" tabindex="0" data-value="children">
+          <span class="expense-card-check"><i class="fa-solid fa-check"></i></span>
+          <div class="expense-card-image">
+            <img src="images/sub/children.png" alt="ចំណាយសម្រាប់កូន" loading="lazy">
+          </div>
+          <p class="expense-card-label">ចំណាយសម្រាប់កូន</p>
+        </div>
+
+        <div class="expense-card" tabindex="0" data-value="personal">
+          <span class="expense-card-check"><i class="fa-solid fa-check"></i></span>
+          <div class="expense-card-image">
+            <img src="images/sub/personal.png" alt="ចំណាយផ្ទាល់ខ្លួន" loading="lazy">
+          </div>
+          <p class="expense-card-label">ចំណាយផ្ទាល់ខ្លួន</p>
+        </div>
+
+        <div class="expense-card" tabindex="0" data-value="business">
+          <span class="expense-card-check"><i class="fa-solid fa-check"></i></span>
+          <div class="expense-card-image">
+            <img src="images/sub/business.png" alt="ចំណាយអាជីវកម្ម" loading="lazy">
+          </div>
+          <p class="expense-card-label">ចំណាយអាជីវកម្ម</p>
+        </div>
+
+        <div class="expense-card" tabindex="0" data-value="debt">
+          <span class="expense-card-check"><i class="fa-solid fa-check"></i></span>
+          <div class="expense-card-image">
+            <img src="images/sub/debt.png" alt="បំណុល" loading="lazy">
+          </div>
+          <p class="expense-card-label">បំណុល</p>
+        </div>
+
+        <div class="expense-card" tabindex="0" data-value="irregular">
+          <span class="expense-card-check"><i class="fa-solid fa-check"></i></span>
+          <div class="expense-card-image">
+            <img src="images/sub/irregular.png" alt="ចំណាយមិនទៀងទាត់" loading="lazy">
+          </div>
+          <p class="expense-card-label">ចំណាយមិនទៀងទាត់</p>
+        </div>
+
+        <div class="expense-card" tabindex="0" data-value="travel">
+          <span class="expense-card-check"><i class="fa-solid fa-check"></i></span>
+          <div class="expense-card-image">
+            <img src="images/sub/travel.png" alt="ការធ្វើដំណើរ និងយានយន្ត" loading="lazy">
+          </div>
+          <p class="expense-card-label">ការធ្វើដំណើរ និងយានយន្ត</p>
+        </div>
+      </div>
+    </div>
+
+    <footer class="sticky-footer">
+      <button class="btn-continue" id="btnContinue">
+        <i class="fa-solid fa-arrow-right btn-icon"></i>
+      </button>
+    </footer>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const cards = document.querySelectorAll('.expense-card');
+      const btn = document.getElementById('btnContinue');
+      let selected = 'household';
+
+      cards.forEach(card => {
+        card.addEventListener('click', () => selectCard(card));
+        card.addEventListener('keydown', e => {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            selectCard(card);
+          }
+        });
+      });
+
+      function selectCard(card) {
+        cards.forEach(c => c.classList.remove('selected'));
+        card.classList.add('selected');
+        card.focus();
+        selected = card.dataset.value;
+      }
+
+      const pageMap = {
+        household: 'household_expense.html',
+        children: 'children_expense.html',
+        personal: 'personal_expense.html',
+        business: 'business_expense.html',
+        debt: 'debt_expense.html',
+        irregular: 'irregular_expense.html',
+        travel: 'travel_expense.html'
+      };
+
+      document.getElementById('backBtn').addEventListener('click', () => {
+        window.location.href = 'index.html';
+      });
+
+      btn.addEventListener('click', () => {
+        localStorage.setItem('selectedExpenseType', selected);
+        window.location.href = pageMap[selected] || 'household_expense.html';
+      });
+    });
+  </script>
+</body>
+</html>

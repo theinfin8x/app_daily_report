@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="km">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#F0EEFF">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <title>ចំណាយអាជីវកម្ម</title>
+  <link rel="icon" href="favicon.png" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Khmer:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <button class="back-btn" id="backBtn" aria-label="ត្រឡប់ក្រោយ"><i class="fa-solid fa-arrow-left"></i></button>
+  <div class="page page-sub active">
+    <div class="container">
+      <div class="sub-grid">
+        <div class="sub-card selected" tabindex="0" data-value="inventory">
+          <span class="sub-card-check"><i class="fa-solid fa-check"></i></span>
+          <div class="sub-card-image">
+            <img loading="lazy" src="images/business_expense/business_inventory.png" alt="">
+          </div>
+          <div class="sub-card-title">ស្តុកទំនិញ</div>
+          <div class="sub-card-examples">សាច់, បន្លែ, គ្រឿងទេស, អង្ករ, ទឹកដោះគោ, ស្ករ, ប្រេងឆា </div>
+        </div>
+
+        <div class="sub-card" tabindex="0" data-value="packaging">
+          <span class="sub-card-check"><i class="fa-solid fa-check"></i></span>
+          <div class="sub-card-image">
+            <img loading="lazy" src="images/business_expense/business_packaging.png" alt="">
+          </div>
+          <div class="sub-card-title">ការវេចខ្ចប់</div>
+          <div class="sub-card-examples">ប្រអប់ដាក់ម្ហូប, ថង់, កែវទឹក, បំពង់បឺត, ស្លាបព្រាជ័រ, ស្កុត, ឡូហ្គោបិទប្រអប់</div>
+        </div>
+
+        <div class="sub-card" tabindex="0" data-value="marketing">
+          <span class="sub-card-check"><i class="fa-solid fa-check"></i></span>
+          <div class="sub-card-image">
+            <img loading="lazy" src="images/business_expense/business_marketing.png" alt="">
+          </div>
+          <div class="sub-card-title">ការផ្សាយពាណិជ្ជកម្ម</div>
+          <div class="sub-card-examples">Facebook Ads, TikTok Ads, ថ្លៃជួលគេថតរូបម្ហូប, ថ្លៃបោះពុម្ពម៉ឺនុយ</div>
+        </div>
+
+        <div class="sub-card" tabindex="0" data-value="delivery">
+          <span class="sub-card-check"><i class="fa-solid fa-check"></i></span>
+          <div class="sub-card-image">
+            <img loading="lazy" src="images/business_expense/business_delivery.png" alt="">
+          </div>
+          <div class="sub-card-title">ការដឹកជញ្ជូន</div>
+          <div class="sub-card-examples">ថ្លៃសេវាផ្ញើម្ហូប, ថ្លៃសាំងដឹកអីវ៉ាន់, ថ្លៃចំណត</div>
+        </div>
+
+        <div class="sub-card" tabindex="0" data-value="equipment">
+          <span class="sub-card-check"><i class="fa-solid fa-check"></i></span>
+          <div class="sub-card-image">
+            <img loading="lazy" src="images/business_expense/business_equipment.png" alt="">
+          </div>
+          <div class="sub-card-title">ឧបករណ៍ធ្វើម្ហូប</div>
+          <div class="sub-card-examples">ឆ្នាំង, ខ្ទះ, ម៉ាស៊ីនក្រឡុក, ម៉ាស៊ីនវេចខ្ចប់, កម្រាលផ្ទះបាយ, ឧបករណ៍វាស់វែង</div>
+        </div>
+
+        <div class="sub-card" tabindex="0" data-value="losses">
+          <span class="sub-card-check"><i class="fa-solid fa-check"></i></span>
+          <div class="sub-card-image">
+            <img loading="lazy" src="images/business_expense/business_losses.png" alt="">
+          </div>
+          <div class="sub-card-title">ការខាតបង់</div>
+          <div class="sub-card-examples">ម្ហូបដែលខូចខាត ឬហួសកាលកំណត់</div>
+        </div>
+      </div>
+    </div>
+
+    <footer class="sticky-footer">
+      <button class="btn-continue" id="btnContinue">
+        <i class="fa-solid fa-arrow-right btn-icon"></i>
+      </button>
+    </footer>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const cards = document.querySelectorAll('.sub-card');
+      const btn = document.getElementById('btnContinue');
+      let selected = 'inventory';
+
+      cards.forEach(card => {
+        card.addEventListener('click', () => selectCard(card));
+        card.addEventListener('keydown', e => {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            selectCard(card);
+          }
+        });
+      });
+
+      function selectCard(card) {
+        cards.forEach(c => c.classList.remove('selected'));
+        card.classList.add('selected');
+        card.focus();
+        selected = card.dataset.value;
+      }
+
+      document.getElementById('backBtn').addEventListener('click', () => {
+        window.location.href = 'expense.html';
+      });
+
+      btn.addEventListener('click', () => {
+        localStorage.setItem('expenseBack', 'expense.html');
+        localStorage.setItem('selectedSubCategory', selected);
+        window.location.href = 'payment.html';
+      });
+    });
+  </script>
+</body>
+</html>
