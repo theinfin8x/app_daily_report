@@ -1,0 +1,13 @@
+{
+  "name": "ម៉ែមាលាចំណូលចំណាយ",
+  "short_name": "ចំណូលចំណាយ",
+  "icons": [
+    {
+      "src": "icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "display": "standalone",
+  "background_color": "#ffffff"
+}
